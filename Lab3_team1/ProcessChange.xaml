@@ -1,0 +1,66 @@
+﻿<Window x:Class="Lab3_team1.ProcessChange"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab3_team1"
+        mc:Ignorable="d"
+        Height="400" Width="50"
+        MinHeight="400" MinWidth ="500"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="1.5*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Content="Название процесса" FontFamily="Times New Roman" FontSize="20"/>
+        <Label Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Content="Пользователь" FontFamily="Times New Roman" FontSize="20"/>
+        <Label Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Content="Процессор" FontFamily="Times New Roman" FontSize="20"/>
+        <Label Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Content="Память (в Гб)" FontFamily="Times New Roman" FontSize="20"/>
+        <Label Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" Content="Размещение на диске" FontFamily="Times New Roman" FontSize="20"/>
+        <Label Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" Content="Описание" FontFamily="Times New Roman" FontSize="20"/>
+        <Label Grid.Row="6" Grid.Column="0" VerticalAlignment="Center" Content="Приоритет (от 0 до 4)" FontFamily="Times New Roman" FontSize="20"/>
+
+        <TextBox Grid.Row="0" Grid.Column="1" Height="25" Margin="5 0 5 0" MaxLength="20" 
+                 BorderThickness="1" FontFamily="Times New Roman" FontSize="15" Name="TBProcessName"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Height="25" Margin="5 0 5 0" MaxLength="20" 
+                 BorderThickness="1" FontFamily="Times New Roman" FontSize="15" Name="TBProcessUser"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Height="25" Margin="5 0 5 0" MaxLength="5" 
+                 BorderThickness="1" FontFamily="Times New Roman" FontSize="15" Name="TBProcessProcessor"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Height="25" Margin="5 0 5 0" MaxLength="5" 
+                 BorderThickness="1" FontFamily="Times New Roman" FontSize="15" Name="TBProcessMemory"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Height="25" Margin="5 0 5 0" MaxLength="50" 
+                 BorderThickness="1" FontFamily="Times New Roman" FontSize="15" Name="TBProcessLocation"/>
+        <TextBox Grid.Row="5" Grid.Column="1" Height="25" Margin="5 0 5 0" MaxLength="100" 
+                 BorderThickness="1" FontFamily="Times New Roman" FontSize="15" Name="TBProcessDescription"/>
+        <TextBox Grid.Row="6" Grid.Column="1" Height="25" Margin="5 0 5 0" MaxLength="1" 
+                 BorderThickness="1" FontFamily="Times New Roman" FontSize="15" Name="TBProcessPriority"/>
+
+        <Grid Grid.Row="7" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Row="0" Grid.Column="1" Height="30" Width="60" Content="OK" 
+                    HorizontalAlignment="Right" VerticalAlignment="Center" Margin="30 0 0 0"
+                    Name="BProcessOK" Click="BProcessOK_Click"/>
+            <Button Grid.Row="0" Grid.Column="2" Height="30" Width="60" Content="Cancel" 
+                    HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 20 0"
+                    Name="BProcessCancel" Click="BProcessCancel_Click"/>
+        </Grid>
+        
+    </Grid>
+</Window>

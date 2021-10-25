@@ -1,0 +1,73 @@
+﻿<Window x:Class="Lab3_team1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab3_team1"
+        mc:Ignorable="d"
+        Title="Computer Manager" Height="600" Width="1200"
+        MinHeight="600" MinWidth="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="AntiqueWhite">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="8*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.25*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Content="Компьютеры" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20"/>
+            <ComboBox Grid.Row="0" Grid.Column="1" Height="25" FontSize="14" Name="CBCurrentComputer" 
+                      MouseDoubleClick="CBCurrentComputer_MouseDoubleClick" SelectionChanged="CBCurrentComputer_SelectionChanged"/>
+            <Button Grid.Row="0" Grid.Column="2" Content="ИЗМЕНИТЬ" Height="20" Width="80" Name="BChangeComInfo" Click="BChangeComInfo_Click"/>
+            <Button Grid.Row="0" Grid.Column="3" Content="ДОБАВИТЬ" Height="20" Width="80" Name="BAddCom" Click="BAddCom_Click" />
+            <Button Grid.Row="0" Grid.Column="4" Content="УДАЛИТЬ" Height="20" Width="80" Name="BDeleteCom" Click="BDeleteCom_Click"/>
+        </Grid>
+
+        <DataGrid Grid.Row="1" Grid.Column="0" IsReadOnly="True" Margin="5 0 5 0" HeadersVisibility="Column" Name="DGCurrentProcesses" MouseDoubleClick="DGCurrentProcesses_MouseDoubleClick">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ПРОЦЕСС" Width="1*" Binding="{Binding PrName}"/>
+                <DataGridTextColumn Header="ПОЛЬЗОВАТЕЛЬ" Width="1*" Binding="{Binding PrUser}"/>
+                <DataGridTextColumn Header="ЦП" Width="1*" Binding="{Binding PrProcessor}"/>
+                <DataGridTextColumn Header="ПАМЯТЬ" Width="1*" Binding="{Binding PrMemory}"/>
+                <DataGridTextColumn Header="РАЗМЕЩЕНИЕ" Width="1*" Binding="{Binding PrLocation}"/>
+                <DataGridTextColumn Header="ОПИСАНИЕ" Width="2*" Binding="{Binding PrDescription}"/>
+                <DataGridTextColumn Header="ПРИОРИТЕТ" Width="0.5*" Binding="{Binding PrPriority}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Grid Grid.Row="2" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Row="0" Grid.Column="0" Content="ДОБАВИТЬ ПРОЦЕСС" Height="20" Width="150" Name="BAddProcess" Click="BAddProcess_Click"/>
+            <Button Grid.Row="0" Grid.Column="1" Content="УДАЛИТЬ ПРОЦЕСС" Height="20" Width="150" Name="BDeleteProcess" Click="BDeleteProcess_Click"/>
+            <Button Grid.Row="0" Grid.Column="3" Content="ИЗМЕНИТЬ ПРОЦЕСС" Height="20" Width="150" Name="BChangeProcessInfo" Click="BChangeProcessInfo_Click"/>
+        </Grid>
+
+        <Grid Grid.Row="3" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Row="0" Grid.Column="0" BorderThickness="0.5" BorderBrush="Gray"/>
+            <Border Grid.Row="0" Grid.Column="1" BorderThickness="0.5" BorderBrush="Gray"/>
+            <Border Grid.Row="0" Grid.Column="2" BorderThickness="0.5" BorderBrush="Gray"/>
+            <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Name="LbProcessCount"/>
+            <Label Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Name="LbProcessUtilization"/>
+            <Label Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" Name="LbCPUUsage"/>
+        </Grid>
+        
+    </Grid>
+</Window>
